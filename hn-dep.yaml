@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: hello-nginx
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: hello-nginx
+    spec:
+      containers:
+        - name: hello-nginx
+          image: docker.io/mariodh/hello-nginx:latest
+          ports:
+            - containerPort: 80
+
